@@ -45,9 +45,9 @@ int main(void){
 	adxl345_pinSetup();
 	adxl345_init();
 	DHT_Setup();
-	//kernel_addTask(KTASK_REPEATED, loop, 1000, KPRIO_LOW, KSTATE_ACTIVE);
+	//kernel_addTask(KTASK_REPEATED, ds18b20rd, 1000, KPRIO_LOW, KSTATE_ACTIVE);
 	//kernel_addTask(KTASK_REPEATED, bmp280rd, 10000, KPRIO_HIGH, KSTATE_ACTIVE);
-	kernel_addTask(KTASK_REPEATED, getdht11, 1000, KPRIO_HIGH, KSTATE_ACTIVE);
+	kernel_addTask(KTASK_REPEATED, dht22rd, 1000, KPRIO_HIGH, KSTATE_ACTIVE);
 	//kernel_addTask(KTASK_REPEATED, adxl345rd, 10000, KPRIO_HIGH, KSTATE_ACTIVE);
 	kernelInit();
 }
