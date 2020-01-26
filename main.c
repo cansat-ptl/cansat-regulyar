@@ -7,7 +7,7 @@
 
 #include "config.h"
 
-void loop(){
+void ds18b20rd(){
 	ds18b20_requestTemperature();
 	delay_ms(1000);
 	char * str = ds18b20_readTemperature();
@@ -27,7 +27,7 @@ void adxl345rd(){
 	float z = adxl345_readZ();
 	debug_logMessage(PGM_ON, L_NONE, PSTR("x1: %f, y1: %f,z1: %f\r\n"), x, y, z);
 }
-void getdht11(){
+void dht22rd(){
 	double t2[1];
 	double hum[1];
 	DHT_GetHumidity(hum);
