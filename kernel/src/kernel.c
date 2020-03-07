@@ -10,7 +10,7 @@
 
 static volatile uint16_t kflags = 0;
 static volatile uint16_t kflags_mirror __attribute__ ((section (".noinit")));
-static uint64_t e_time = 0;
+static uint32_t e_time = 0;
 extern uint8_t mcucsr_mirror;
 
 static uint8_t kCallIndex[3] = {0, 0, 0};

@@ -35,6 +35,8 @@
 #define SPIMODEH 0		//CPHA bit of SPCR - SPI clock phase	
 #define SPISPDL 0		//SPR0 bit of SPCR - SPI speed prescaler bit 0	
 #define SPISPDH 0		//SPR1 bit of SPCR - SPI speed prescaler bit 1	
+
+#define SPI_OP_TIMEOUT 1
 #endif	
 //----------------------------------------------------------------//	
 

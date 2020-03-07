@@ -38,16 +38,12 @@ int main(void){
 	
 	hal_enableInterrupts();
 	wdt_enable(WDTO_2S);
-	hal_setupPins();
 	spi_init();
-	//bmp280_pinSetup();
-	//bmp280_init();
-	adxl345_pinSetup();
-	adxl345_init();
-	DHT_Setup();
-	//kernel_addTask(KTASK_REPEATED, ds18b20rd, 1000, KPRIO_LOW, KSTATE_ACTIVE);
-	//kernel_addTask(KTASK_REPEATED, bmp280rd, 10000, KPRIO_HIGH, KSTATE_ACTIVE);
-	kernel_addTask(KTASK_REPEATED, dht22rd, 1000, KPRIO_HIGH, KSTATE_ACTIVE);
-	//kernel_addTask(KTASK_REPEATED, adxl345rd, 10000, KPRIO_HIGH, KSTATE_ACTIVE);
+	hal_setupPins();
+	
+	kernel_addTask(KTASK_REPEATED, ds18b20rd, 1000, KPRIO_LOW, KSTATE_ACTIVE);
+	kernel_addTask(KTASK_REPEATED, bmp280rd, 1000, KPRIO_HIGH, KSTATE_ACTIVE);
+	kernel_addTask(KTASK_REPEATED, dht22rd, 1000, KPRIO_LOW, KSTATE_ACTIVE);
+	kernel_addTask(KTASK_REPEATED, adxl345rd, 100, KPRIO_HIGH, KSTATE_ACTIVE);
 	kernelInit();
 }
